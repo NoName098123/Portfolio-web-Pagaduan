@@ -1,0 +1,359 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(negative-space-just-sky-clouds-009\ \(1\).jpg);
+    background-size: cover;  /* Changed from 'fixed' to 'cover' for full-screen coverage */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;  /* Added to make the background fixed (doesn't scroll with content) */
+}
+
+header {    
+    background-color: rgba(0, 0, 0, 0.7); /* Darker semi-transparent background */
+    color: #fff; /* White text for contrast */
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+    
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Space between the image and the title */
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+#profile-pic {
+    width: 100px; 
+    height: 100px; 
+    border-radius: 100%; 
+    object-fit: cover; /* Ensures the image fits nicely without distortion */
+    border: 2px solid rgba(255, 255, 255, 0.5); 
+    transition: transform 0.3s ease; 
+}
+
+#profile-pic:hover {
+    transform: scale(1.3); /* Enlarges the image by 10% on hover */
+}
+
+#menu-options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem; /* Space between buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap on small screens */
+}
+
+#menu-options button {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 1rem; /* Ensure readable size */
+}
+
+#menu-options button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+#menu-options button.active {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-color: white;
+}
+
+.page {
+    display: none;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-white transparent background */
+    border-radius: 10px; /* Optional: Adds rounded corners for a nicer look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for depth */
+    margin-top: 10px; /* Added: Pushes the page content box 10px down from the header */
+}
+
+.page.active {
+    display: block;
+}
+
+/* Override for home page to remove the box and adjust layout */
+#home {
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 2rem; /* Keep some padding */
+    max-width: none; /* Allow full width */
+    margin: 10px auto 0; /* Adjust margin */
+}
+
+.home-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Set a max width for the content */
+    margin: 0 auto; /* Center the flex container */
+}
+
+.home-text {
+    flex: 1; /* Takes up available space on the left */
+    text-align: left;
+    color: white;
+}
+
+.home-image {
+    flex: 1; /* Takes up available space on the right */
+    text-align: center;
+}
+
+#home-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Optional: Add some styling */
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+#home h2 {
+    font-size: 3.5em; /* Makes the header bigger (from previous update) */
+    font-weight: 80px;
+    margin-bottom: 1rem; /* Optional: Adds space below the header */
+    text-align: left; /* Aligns the header to the left */
+}
+
+#home p {
+    font-size: 2.5em; /* Makes the text bigger (from previous update) */
+    line-height: 1.5; /* Improves readability */
+    text-align: left; /* Changed to left for consistency */
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.project-item img:hover {
+    transform: scale(1.1);
+}
+
+.project-item {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form input, form textarea, form button {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}
+
+form button {
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+.comment {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+/* Styles for the image modal */
+#image-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    z-index: 1000; /* Ensures it appears on top */
+    /* Removed justify-content and align-items to allow full-screen fill */
+    cursor: pointer; /* Indicates it's clickable to close */
+}
+
+#modal-img {
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    object-fit: cover; /* Covers the entire area, cropping if necessary to fit */
+}
+
+/* Styles for contact links */
+.contact-links {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.contact-links h3 {
+    margin-bottom: 1rem;
+}
+
+.contact-link {
+    display: inline-block;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.contact-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.contact-link i {
+    margin-right: 0.5rem;
+}
+
+/* Styles for About Me page text */
+#about h2 {
+    font-size: 2.5em; /* Makes the heading larger */
+    font-weight: bold; /* Optional: Adds emphasis */
+    margin-bottom: 1rem; /* Optional: Adds space below the heading */
+    text-align: left; /* Aligns to the left for consistency */
+}
+
+#about p {
+    font-size: 1.5em; /* Makes the paragraph text larger */
+    line-height: 1.5; /* Improves readability */
+    text-align: left; /* Aligns to the left for consistency */
+}   
+
+/* Updated styles for the image modal to make it fill the screen more */
+#image-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Slightly darker overlay for better focus */
+    z-index: 1000; /* Ensures it appears on top */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Indicates it's clickable to close */
+}
+
+#modal-img {
+    max-width: 95%; /* Increased from 90% to fill more of the screen */
+    max-height: 95%; /* Increased from 90% to fill more of the screen */
+    object-fit: contain; /* Maintains aspect ratio without distortion */
+    transition: opacity 0.3s ease; /* Optional: Smooth fade-in */
+}
+
+/* Mobile responsiveness fixes */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack header elements vertically */
+        padding: 0.5rem; /* Reduce padding */
+        gap: 0.5rem; /* Reduce gap */
+    }
+
+    .header-left {
+        justify-content: center; /* Center the profile pic and title */
+        gap: 0.5rem; /* Smaller gap */
+    }
+
+    #profile-pic {
+        width: 60px; /* Smaller profile pic on mobile */
+        height: 60px;
+    }
+
+    #menu-options {
+        justify-content: center; /* Center the menu buttons */
+        gap: 0.25rem; /* Smaller gap between buttons */
+    }
+
+    #menu-options button {
+        padding: 0.4rem 0.8rem; /* Smaller padding for buttons */
+        font-size: 0.9rem; /* Smaller font size */
+    }
+
+    .page {
+        padding: 1rem; /* Reduce padding on pages */
+        margin-top: 5px; /* Smaller margin */
+    }
+
+    #home {
+        padding: 1rem; /* Reduce padding */
+        margin: 5px auto 0; /* Adjust margin */
+    }
+
+    .home-content {
+        flex-direction: column; /* Stack text and image vertically on mobile */
+        text-align: center; /* Center align for mobile */
+    }
+
+    .home-text {
+        text-align: center; /* Center text on mobile */
+    }
+
+    .home-image {
+        margin-top: 1rem; /* Add space above image */
+    }
+
+    #home h2 {
+        font-size: 2em; /* Smaller font size on mobile */
+        margin-bottom: 0.5rem;
+    }
+
+    #home p {
+        font-size: 1.2em; /* Smaller font size on mobile */
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Smaller grid items */
+        gap: 1rem; /* Smaller gap */
+    }
+
+    #about h2 {
+        font-size: 1.8em; /* Smaller heading */
+    }
+
+    #about p {
+        font-size: 1.1em; /* Smaller paragraph */
+    }
+
+    .contact-links {
+        margin-top: 1rem;
+    }
+
+    .contact-link {
+        display: block; /* Stack links vertically on mobile */
+        margin: 0.5rem 0; /* Vertical margin */
+        text-align: center;
+    }
+
+    /* Modal adjustments for mobile */
+    #modal-img {
+        max-width: 100%; /* Full width on mobile */
+        max-height: 100%;
+    }
+}

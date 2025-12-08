@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Added Font Awesome for icons -->
+    <title>Ivanns Porfilio</title>
+</head>
+<body>
+<header>
+    <div class="header-left">
+        <img src="pfp.png" alt="Profile Picture" id="profile-pic">
+        <h1>My Portfolio</h1>
+    </div>
+    <div id="menu-options">
+        <button id="home-btn" class="active">Home</button>
+        <button id="about-btn">About Me</button>
+        <button id="projects-btn">Projects</button>
+        <button id="contact-btn">Contact</button>
+    </div>
+</header>
+    <div id="home" class="page active">
+        <div class="home-content">
+            <div class="home-text">
+                <h2>Hello!<br>I'm Ivann<br>Welcome To My Portfolio</h2>
+                <p>Hello good day This is my Previous projects and art woks</p>
+            </div>
+            <div class="home-image">
+                <img src="BG.png" alt="Home Image" id="home-img"> <!-- Updated image path -->
+            </div>
+        </div>
+    </div>
+    
+    <div id="about" class="page">
+        <h2>About Me</h2>
+        <p> Hi! I'm Ivann Denver Pagaduan, and I'm a first-year college student in the BSEMC-GD 
+            program. I love anime and video games, and coffee serves as my constant energy boost. 
+            Whether it's for school or for fun, I enjoy learning new things and making things.
+        </p>
+    </div>
+    
+    <div id="projects" class="page">
+        <h2>My Projects</h2>
+        <p>Here are some of my artworks and projects.</p>
+        <div class="project-grid">
+            <div class="project-item">
+                <img src="img 1.jpg" alt="Project 1">
+                <p>BRAND LOGO</p>
+            </div>
+            <div class="project-item">
+                <img src="broch back.png" alt="Project 2">
+                <p>BROCHURE </p>
+            </div>
+            <div class="project-item">
+                <img src="broch.png" alt="Project 2">
+                <p>BROCHUR</p>
+            </div>
+            <div class="project-item">
+                <img src="Dragon.jpeg" alt="Project 3">
+                <p>TYPOGRAPHY</p>
+            </div>
+            <div class="project-item">
+                <img src="mgzbck.jpg" alt="Project 3">
+                <p>MAGAZINE</p>
+            </div>
+            <div class="project-item">
+                <img src="mgzfrt.jpg" alt="Project 3">
+                <p>MAGAZINE</p>
+            </div>
+                <div class="project-item">
+                <img src="Pagaduan,Ivann Denver_ACT2_LAB.jpg" alt="Project 3">
+                <p>Burger Poste</p>
+            </div>
+                <div class="project-item">
+                <img src="BG.png" alt="Project 3">
+                <p>Artwork</p>
+            </div>
+            <div class="project-item">
+                <img src="Product.jpg" alt="Project 3">
+                <p>Product</p>
+            </div>
+            <div class="project-item">
+                <img src="design.jpg" alt="Project 3">
+                <p>Design</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="contact" class="page">
+        <h2>Contact Me</h2>
+        <div class="contact-links">
+            <a href="https://www.facebook.com/ivanndenver.pagaduan" target="_blank" class="contact-link">
+                <i class="fab fa-facebook-f"></i> Facebook
+            </a>
+            <a href="mailto:ivanndenverpagaduan@gmail.com" class="contact-link">
+                <i class="fas fa-envelope"></i> Email
+            </a>
+                <i class="fas fa-phone"></i> 63+994-137-6315
+        </div>
+    </div>
+
+    <!-- Modal for displaying images on right-click -->
+    <div id="image-modal">
+        <img id="modal-img" alt="Enlarged Image">
+    </div>
+
+    <script src="function.js"></script>
+</body>
+</html>
